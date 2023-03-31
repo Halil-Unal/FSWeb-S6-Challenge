@@ -9,7 +9,7 @@ const App = () => {
   // Fetch characters from the API in an effect hook. Remember, anytime you have a 
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
-  const [starData, setstartData] = useState([]);
+  const [starData, setstartData] = useState(null);
   useEffect(() => {
     // Optionally the request above could also be done as
     axios
@@ -33,10 +33,11 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">Karakterler</h1>
-  <Karakter data={starData}>   </Karakter>
+  
+      {starData ? starData.map((c) => <Karakter stardata={c} />) : "yükleniyor"}
     </div>
+   
   );
 }
 
 export default App;
-

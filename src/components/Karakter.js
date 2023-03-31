@@ -4,7 +4,7 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Dropdown,DropdownToggle,DropdownMenu,DropdownItem,UncontrolledDropdown} from 'reactstrap';
 export default function Karakter(props) {
-  const { data} = props;
+  //const { data} = props;
  
 
   return (
@@ -14,34 +14,41 @@ export default function Karakter(props) {
       caret
       color="dark"
     >
-      {data[0].name}
+      {props.stardata.name}
     </DropdownToggle>
     <DropdownMenu dark>
       <DropdownItem header>
-      gender: {data[0].gender}
+     
+      gender:  {props.stardata.gender}
       </DropdownItem>
       <DropdownItem>
-      Height:  {data[0].height}
+     
+     Height:  {props.stardata.height}
       </DropdownItem>
       <DropdownItem text>
-      Mass:  {data[0].mass}
+      
+      Mass:  {props.stardata.mass}
       </DropdownItem>
       <DropdownItem disabled>
-      Birth Year:  {data[0].birth_year
-}
+     
+      BirthYear:  {props.stardata.birth_year}
+
       </DropdownItem>
       <DropdownItem divider />
       <DropdownItem>
-      Eye Color:  {data[0].eye_color
-}
+      
+      Eye Color:  {props.stardata.eye_color}
+
       </DropdownItem>
       <DropdownItem>
-      Hair Color:  {data[0].hair_color
-}
+      
+      Hair Color: {props.stardata.hair_color}
+
       </DropdownItem>
       <DropdownItem>
-      Skin Color:  {data[0].skin_color
-}
+      
+      Skin Color:  {props.stardata.skin_color}
+
       </DropdownItem>
     </DropdownMenu>
   </UncontrolledDropdown>
@@ -55,3 +62,6 @@ export default function Karakter(props) {
 
 
 }
+
+
+

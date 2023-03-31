@@ -2,6 +2,18 @@ import React from 'react';
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Karakter from "./components/Karakter";
+import İnput from "./components/İnput";
+
+
+const getFilteredItems =(querry,items) =>{
+  if(!querry){
+    return items;
+  }
+  return items.filter(Name=>Name.name.includes(querry))
+}
+
+
+
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
@@ -10,6 +22,7 @@ const App = () => {
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
   const [starData, setstartData] = useState(null);
+  const [querry,setquerry]= useState("");
   useEffect(() => {
     // Optionally the request above could also be done as
     axios
@@ -30,10 +43,20 @@ const App = () => {
       });
     console.log("sayfam render oldu");
   }, []);
+ 
   return (
+
     <div className="App">
+  
       <h1 className="Header">Karakterler</h1>
+      <label>Search</label>
+  <input type='text' onChange={e=>setquerry(e.target.value)}></input>
      < h4> Star Wars Major Characters List  </h4>
+
+
+    
+
+
   <div className='data'>
       {starData ? starData.map((c) => <Karakter stardata={c} />) : "yükleniyor"}
       </div>
@@ -41,5 +64,6 @@ const App = () => {
    
   );
 }
+
 
 export default App;

@@ -2,15 +2,9 @@ import React from 'react';
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Karakter from "./components/Karakter";
-import İnput from "./components/İnput";
 
 
-const getFilteredItems =(querry,items) =>{
-  if(!querry){
-    return items;
-  }
-  return items.filter(Name=>Name.name.includes(querry))
-}
+
 
 
 
@@ -34,6 +28,7 @@ const App = () => {
       .then(function (response) {
         console.log(response);
         setstartData(response.data);
+        setquerry(response.data)
       })
       .catch(function (error) {
         console.log(error);
@@ -43,14 +38,18 @@ const App = () => {
       });
     console.log("sayfam render oldu");
   }, []);
- 
+ const change =(value)=>{
+  setquerry(value);
+ }
   return (
 
     <div className="App">
   
       <h1 className="Header">Karakterler</h1>
       <label>Search</label>
-  <input type='text' onChange={e=>setquerry(e.target.value)}></input>
+  <input type='text' onChange={e=>change(e.target.value)}></input>
+
+
      < h4> Star Wars Major Characters List  </h4>
 
 

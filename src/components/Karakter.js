@@ -17,6 +17,7 @@ export default function Karakter(props) {
       {props.stardata.name}
     </DropdownToggle>
     <DropdownMenu dark>
+
       <DropdownItem header>
      
       gender:  {props.stardata.gender}
@@ -48,28 +49,47 @@ export default function Karakter(props) {
       <DropdownItem>
       
       Skin Color:  {props.stardata.skin_color}
-
-      </DropdownItem>
-      <DropdownItem>
       
-       {props.stardata.films}
-
       </DropdownItem>
-      <DropdownItem>
+
+
+      <UncontrolledDropdown>
+    <DropdownToggle
+      caret
+      color="dark"
+    >
+      Appears in 4 films
+    </DropdownToggle>
+    <DropdownMenu dark>
+
+    <DropdownItem>
       
-      {props.stardata.films[1]}
+      {props.stardata.films}
 
      </DropdownItem>
      <DropdownItem>
-      
-     {props.stardata.films[2]}
+     
+     {props.stardata.films[1]}
 
-      </DropdownItem>
-      <DropdownItem>
-      
-      {props.stardata.films[3]}
+    </DropdownItem>
+    <DropdownItem>
+     
+    {props.stardata.films[2]}
 
-      </DropdownItem>
+     </DropdownItem>
+     <DropdownItem>
+     
+     {props.stardata.films[3]}
+
+     </DropdownItem>
+
+
+
+    </DropdownMenu>
+    
+      
+    </UncontrolledDropdown>
+      
     </DropdownMenu>
   </UncontrolledDropdown>
 

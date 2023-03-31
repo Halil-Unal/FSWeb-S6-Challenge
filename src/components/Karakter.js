@@ -64,7 +64,7 @@ export default function Karakter(props) {
 
     <DropdownItem>
       
-      {props.stardata.films}
+      {props.stardata.films[0]}
 
      </DropdownItem>
      <DropdownItem>

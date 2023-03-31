@@ -33,8 +33,9 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">Karakterler</h1>
-  
+  <div className='data'>
       {starData ? starData.map((c) => <Karakter stardata={c} />) : "yükleniyor"}
+      </div>
     </div>
    
   );

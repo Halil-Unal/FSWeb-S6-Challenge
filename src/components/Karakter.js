@@ -2,7 +2,7 @@
 
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Dropdown,DropdownToggle,DropdownMenu,DropdownItem,UncontrolledDropdown} from 'reactstrap';
+import { DropdownToggle,DropdownMenu,DropdownItem,UncontrolledDropdown} from 'reactstrap';
 export default function Karakter(props) {
   //const { data} = props;
  

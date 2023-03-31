@@ -50,6 +50,26 @@ export default function Karakter(props) {
       Skin Color:  {props.stardata.skin_color}
 
       </DropdownItem>
+      <DropdownItem>
+      
+       {props.stardata.films}
+
+      </DropdownItem>
+      <DropdownItem>
+      
+      {props.stardata.films[1]}
+
+     </DropdownItem>
+     <DropdownItem>
+      
+     {props.stardata.films[2]}
+
+      </DropdownItem>
+      <DropdownItem>
+      
+      {props.stardata.films[3]}
+
+      </DropdownItem>
     </DropdownMenu>
   </UncontrolledDropdown>
 

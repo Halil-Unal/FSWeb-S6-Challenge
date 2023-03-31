@@ -12,7 +12,7 @@ const App = () => {
       .get("https://swapi.dev/api/people/")
       .then(function (response) {
         console.log(response);
-        setstartData(response.data.results);
+        setstartData(response.data);
       })
       .catch(function (error) {
         console.log(error);
